@@ -2,30 +2,29 @@ name: BDNews24 Telegram Bot
 
 on:
   schedule:
-    # Runs every 15 minutes (Cron Syntax)
     - cron: '*/15 * * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write # Needed to commit posted_articles.json back to repo
+      contents: write
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-            python-version: '3.11'
+          python-version: '3.11'
 
       - - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests feedparse
+          pip install requests feedparser
 
       - name: Fetch News & Send Telegram Alerts
         env:
