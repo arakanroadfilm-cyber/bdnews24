@@ -30,7 +30,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-        run: python bdnews_bot.py
+        run: python bdnews24_bot.py
 
       - name: Commit and Push Updated State
         run: |
