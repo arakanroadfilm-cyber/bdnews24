@@ -4,8 +4,8 @@ import requests
 import feedparser
 
 # Load credentials securely from GitHub Environment Variables
-TELEGRAM_BOT_TOKEN = os.getenv("8605711079:AAFHFMs4ZDOHRgoG9Ypa7zLtK1nc46RCjSA")
-TELEGRAM_CHANNEL_ID = os.getenv("@bdnews24tele")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
 
 BDNEWS_RSS_URL = "https://bdnews24.com/?widgetName=rssfeed&widgetId=1150&getXmlFeed=true"
 POSTED_ARTICLES_FILE = "posted_articles.json"
